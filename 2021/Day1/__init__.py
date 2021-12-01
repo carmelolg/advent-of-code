@@ -1,32 +1,34 @@
-numbers = []
+def init():
+    lines = []
+    file = open("Day1/input.txt", "r")
+    for item in file:
+        lines.append(int(item))
+
+    return lines
 
 
 # Part A
-def part_a():
-    file = open("Day1/01_input.txt", "r")
-    for item in file:
-        numbers.append(int(item))
-
+def part_a(lines):
     count_a = 0
-    for i, item in enumerate(numbers):
-        if i + 1 == len(numbers):
+    for i, item in enumerate(lines):
+        if i + 1 == len(lines):
             break
-        if numbers[i + 1] > numbers[i]:
+        if lines[i + 1] > lines[i]:
             count_a = count_a + 1
 
     return count_a
 
 
 # Part B
-def part_b():
+def part_b(lines):
     count_b = 0
     group = []
-    for i in range(len(numbers)):
+    for i in range(len(lines)):
 
-        if i + 1 == len(numbers) or i + 2 == len(numbers):
+        if i + 1 == len(lines) or i + 2 == len(lines):
             break
 
-        subgroup = numbers[i:i + 3]
+        subgroup = lines[i:i + 3]
         group.append(sum(subgroup))
 
     for k, item in enumerate(group):
@@ -39,4 +41,5 @@ def part_b():
 
 
 def run():
-    print('Day 1\n', '- part A = ', part_a(), '\n', '- part B = ', part_b(), sep=' ')
+    lines = init()
+    print('Day 1\n', '- part A = ', part_a(lines), '\n', '- part B = ', part_b(lines), sep=' ')
