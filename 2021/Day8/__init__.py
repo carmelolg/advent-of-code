@@ -9,18 +9,6 @@ digits_utils['5'] = [2, 3, 5]
 digits_utils['6'] = [0, 6, 9]
 digits_utils['7'] = [8]
 
-digits_pattern = dict()
-digits_pattern[0] = 'cagedb'
-digits_pattern[1] = 'ab'
-digits_pattern[2] = 'gcdfa'
-digits_pattern[3] = 'fbcad'
-digits_pattern[4] = 'eafb'
-digits_pattern[5] = 'cdfbe'
-digits_pattern[6] = 'cdfgeb'
-digits_pattern[7] = 'dab'
-digits_pattern[8] = 'acedgfb'
-digits_pattern[9] = 'cefabd'
-
 
 def init():
     file = open("Day8/input.txt", "r")
